@@ -11,11 +11,11 @@ let cube = {
   y: canvas.height / 4 * 3,
   color: "rgb(245, 223, 24)",
   velocityY: 0,
-  initialJumpVelocity: -9,
+  initialJumpVelocity: -10,
 };
 
-let speed = 4.5;
-let gravity = -0.62;
+let speed = 5;
+let gravity = -0.77;
 let floorHeight = canvas.height / 4 * 3 + B;
 
 let objPos = (x = 0, y = 0) => {return {x: cube.x + B * x, y: floorHeight - B - B * y}};
@@ -51,6 +51,8 @@ c.lineWidth = 2;
 update();
 window.addEventListener("mousedown", () => {mouseHold = true});
 window.addEventListener("mouseup", () => {mouseHold = false});
+document.getElementById("Jump").addEventListener("mousedown", () => {mouseHold = true});
+document.getElementById("Jump").addEventListener("mouseup", () => {mouseHold = false});
 
 function update() {
   window.requestAnimationFrame(update);
@@ -166,11 +168,11 @@ function gameOver() {
     y: canvas.height,
     color: "rgb(245, 223, 24)",
     velocityY: 0,
-    initialJumpVelocity: -9,
+    initialJumpVelocity: -10,
   };
   floorHeight = canvas.height / 4 * 3 + B;
-  spikes = spikespos.map(pos => ({x: pos.x + cube.x + 300, y: pos.y}));
-  blocks = blockspos.map(pos => ({x: pos.x + cube.x + 300, y: pos.y}));
+  spikes = spikespos.map(pos => ({x: pos.x + cube.x + 400, y: pos.y}));
+  blocks = blockspos.map(pos => ({x: pos.x + cube.x + 400, y: pos.y}));
 
   mouseHold = false;
   jumped = false;

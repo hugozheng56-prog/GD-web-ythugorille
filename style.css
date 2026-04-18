@@ -6,3 +6,9 @@
 body{
   background-color: rgb(126, 97, 36);
 }
+button{
+  left: 100px;
+  top: -100px;
+  width: 100px;
+  height: 600px;
+}
