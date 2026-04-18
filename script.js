@@ -49,10 +49,9 @@ let sto = false;
 c.lineWidth = 2;
 
 update();
+
 window.addEventListener("mousedown", () => {mouseHold = true});
 window.addEventListener("mouseup", () => {mouseHold = false});
-document.getElementById("Jump").addEventListener("mousedown", () => {mouseHold = true});
-document.getElementById("Jump").addEventListener("mouseup", () => {mouseHold = false});
 
 function update() {
   window.requestAnimationFrame(update);
@@ -102,7 +101,7 @@ function update() {
     cube.velocityY -= gravity;
     spikes.forEach(spike => {spike.x -= speed});
     blocks.forEach(block => {block.x -= speed});
-  } console.log(sto)
+  } //console.log(sto)
 
   if (cube.y + B >= floorHeight) {
     cube.y = floorHeight - B;
